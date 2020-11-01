@@ -23,12 +23,12 @@ class TagController extends Controller
     {
         $request->validate([
             'title' => 'required|unique:tags',
-            'user_id' => 'required',
+            'user_id' => 'required'
         ]);
 
         Tag::create($request->all());
         return redirect()->route('tags.index')
-                         ->with('success', 'Tag salva com sucesso!');;
+                         ->with('success', 'Tag salva com sucesso!');
     }
 
     public function edit(Tag $tag)
@@ -38,6 +38,11 @@ class TagController extends Controller
 
     public function update(Request $request, Tag $tag)
     {
+        $request->validate([
+            'title' => 'required|unique:tags',
+            'user_id' => 'required'
+        ]);
+        
         $tag->update($request->all());
         return redirect()->route('tags.index')
                          ->with('success', 'Tag atualizada com sucesso!');
