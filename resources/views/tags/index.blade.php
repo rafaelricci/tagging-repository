@@ -37,7 +37,7 @@
                                 action="{{ route('tags.destroy', ['tag' => $tag->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+                                <button type="submit" onclick="return confirm('Você tem certeza disso? Essa tag sera desassociada dos repositórios a qual foi registrada')" class="btn btn-sm btn-danger">Excluir</button>
                             </form>
                         </td>
                     </tr>
