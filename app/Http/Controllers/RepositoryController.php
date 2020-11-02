@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Repository;
-use App\Services\RepositoryApi\GetAllServices;
-use App\Services\RepositoryApi\GetByIdServices;
+use App\Services\RepositoryApi\GetAllService;
+use App\Services\RepositoryApi\GetAllWithParamsService;
+use App\Services\RepositoryApi\GetByIdService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\Paginator;
@@ -20,8 +21,19 @@ class RepositoryController extends Controller
 
     public function index()
     {
-        $getAllServices = new GetAllServices();
-        $repositories = $this->paginate($getAllServices->get());
+        $getAllService = new GetAllService();
+        $repositories = $this->paginate($getAllService->get());
+        return view('repositories.index', compact('repositories'));
+    }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'term' => 'required',
+        ]);
+        
+        $getAllWithParamsService = new GetAllWithParamsService();
+        $repositories = $this->paginate($getAllWithParamsService->get($request)['items']);
         return view('repositories.index', compact('repositories'));
     }
 
@@ -34,14 +46,15 @@ class RepositoryController extends Controller
         ]);
 
         Repository::create($request->all());
-        return redirect()->route('repositories.show', ['id' => $request->repository_id])
-                         ->with('success', 'Tag associada com sucesso!');
+        return redirect()->route('repositories.show', [
+            'id' => $request->repository_id
+        ])->with('success', 'Tag associada com sucesso!');
     }
 
     public function show($id)
     {
-        $getAllServices = new GetByIdServices();
-        $repository = $getAllServices->get($id);
+        $getByIdService = new GetByIdService();
+        $repository = $getByIdService->get($id);
         $repositoryModel = new Repository();
         $tags = $repositoryModel->getTagsRegistered(Auth::id(), $id);
 
