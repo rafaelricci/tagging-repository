@@ -9,13 +9,17 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    TaggingReposotory
+                    TaggingRepository
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -81,5 +85,27 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script>
+        var route = "{{ route('tags.getTags') }}"
+        var multipleFetch = new Choices('#choices-multiple-remote-fetch', {
+          placeholder: true,
+          removeItemButton: true,
+          placeholderValue: 'Pick an Strokes record',
+          maxItemCount: 1,
+        }).setChoices(function() {
+          return fetch(
+            route
+          )
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(data) {
+              return data.map(function(tag) {
+                return { value: tag.id, label: tag.title };
+              });
+            });
+        });
+    </script>
 </body>
 </html>

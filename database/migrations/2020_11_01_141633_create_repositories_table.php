@@ -9,11 +9,13 @@ class CreateRepositoriesTable extends Migration
     public function up()
     {
         Schema::create('repositories', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('repository_id')->nullable(false);
-            $table->foreignId('tag_id')->nullable(false)->constrained();
+            $table->foreignId('tag_id')
+                  ->nullable(false)
+                  ->constrained()
+                  ->onDelete('cascade');
             $table->foreignId('user_id')->nullable(false)->constrained();
-            $table->unique('repository_id', 'tag_id');
+            $table->primary(['tag_id', 'repository_id']);	
             $table->timestamps();
         });
     }
