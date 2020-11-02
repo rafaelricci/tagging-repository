@@ -9,7 +9,7 @@ class Repository extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = ['first_id', 'second_id'];
+    protected $primaryKey = ['tag_id', 'repository_id'];
 
     public $incrementing = false;
 
