@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Services;
 
+use VCR\VCR; 
 use App\Services\RepositoryApi\GetAllWithParamsService;
 use Tests\TestCase;
 use Illuminate\Http\Request;
@@ -9,7 +10,7 @@ use Illuminate\Http\Request;
 class GetAllWithParamsServiceTest extends TestCase
 {
     /**
-     * @vcr get_all_service_with_params_test
+     * @vcr get_all_service_with_params_test.yml
      */
     public function testGet()
     {

@@ -2,13 +2,14 @@
 
 namespace Tests\Unit\Services;
 
+use VCR\VCR; 
 use App\Services\RepositoryApi\GetByIdService;
 use Tests\TestCase;
 
 class GetByIdServiceTest extends TestCase
 {
     /**
-     * @vcr get_by_id_service_test
+     * @vcr get_by_id_service_test.yml
      */
     public function testGet()
     {
