@@ -37,8 +37,8 @@ Execute este comando:
 
 **Outputs esperados**
 
-!["Output"](doc/tess-outputs/output1.png) 
-!["Output"](doc/tess-outputs/output2.png) 
+!["Output"](doc/tests-outputs/output1.png) 
+!["Output"](doc/tests-outputs/output2.png) 
 
 
 ### Dependências
