@@ -1,0 +1,74 @@
+
+-
+    request:
+        method: GET
+        url: 'https://api.github.com/repositories/1'
+        headers:
+            Host: api.github.com
+            Accept-Encoding: ''
+            User-Agent: GuzzleHttp/7
+            Authorization: 'Bearer e4d6a064fc07f17429ba5a0abf7d22cdf7c9c78d'
+            Accept: ''
+    response:
+        status:
+            http_version: '1.1'
+            code: '200'
+            message: OK
+        headers:
+            Server: GitHub.com
+            Date: 'Tue, 03 Nov 2020 16:49:11 GMT'
+            Content-Type: 'application/json; charset=utf-8'
+            Content-Length: '4846'
+            Status: '200 OK'
+            Cache-Control: 'private, max-age=60, s-maxage=60'
+            Vary: ['Accept, Authorization, Cookie, X-GitHub-OTP', 'Accept-Encoding, Accept, X-Requested-With']
+            ETag: '"27e460e79d26a0941e14650e92fcc8d45610f746a773009f6d5793f1aee2358f"'
+            Last-Modified: 'Mon, 02 Nov 2020 19:37:03 GMT'
+            X-OAuth-Scopes: 'admin:repo_hook, repo, user'
+            X-Accepted-OAuth-Scopes: repo
+            X-GitHub-Media-Type: 'github.v3; format=json'
+            X-RateLimit-Limit: '5000'
+            X-RateLimit-Remaining: '4983'
+            X-RateLimit-Reset: '1604424166'
+            X-RateLimit-Used: '17'
+            Access-Control-Expose-Headers: 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset'
+            Access-Control-Allow-Origin: '*'
+            Strict-Transport-Security: 'max-age=31536000; includeSubdomains; preload'
+            X-Frame-Options: deny
+            X-Content-Type-Options: nosniff
+            X-XSS-Protection: '1; mode=block'
+            Referrer-Policy: 'origin-when-cross-origin, strict-origin-when-cross-origin'
+            Content-Security-Policy: 'default-src ''none'''
+            X-GitHub-Request-Id: '8AC4:6854:24E3BB7:3D21536:5FA18A07'
+        body: '{"id":1,"node_id":"MDEwOlJlcG9zaXRvcnkx","name":"grit","full_name":"mojombo/grit","private":false,"owner":{"login":"mojombo","id":1,"node_id":"MDQ6VXNlcjE=","avatar_url":"https://avatars0.githubusercontent.com/u/1?v=4","gravatar_id":"","url":"https://api.github.com/users/mojombo","html_url":"https://github.com/mojombo","followers_url":"https://api.github.com/users/mojombo/followers","following_url":"https://api.github.com/users/mojombo/following{/other_user}","gists_url":"https://api.github.com/users/mojombo/gists{/gist_id}","starred_url":"https://api.github.com/users/mojombo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/mojombo/subscriptions","organizations_url":"https://api.github.com/users/mojombo/orgs","repos_url":"https://api.github.com/users/mojombo/repos","events_url":"https://api.github.com/users/mojombo/events{/privacy}","received_events_url":"https://api.github.com/users/mojombo/received_events","type":"User","site_admin":false},"html_url":"https://github.com/mojombo/grit","description":"**Grit is no longer maintained. Check out libgit2/rugged.** Grit gives you object oriented read/write access to Git repositories via Ruby.","fork":false,"url":"https://api.github.com/repos/mojombo/grit","forks_url":"https://api.github.com/repos/mojombo/grit/forks","keys_url":"https://api.github.com/repos/mojombo/grit/keys{/key_id}","collaborators_url":"https://api.github.com/repos/mojombo/grit/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/mojombo/grit/teams","hooks_url":"https://api.github.com/repos/mojombo/grit/hooks","issue_events_url":"https://api.github.com/repos/mojombo/grit/issues/events{/number}","events_url":"https://api.github.com/repos/mojombo/grit/events","assignees_url":"https://api.github.com/repos/mojombo/grit/assignees{/user}","branches_url":"https://api.github.com/repos/mojombo/grit/branches{/branch}","tags_url":"https://api.github.com/repos/mojombo/grit/tags","blobs_url":"https://api.github.com/repos/mojombo/grit/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/mojombo/grit/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/mojombo/grit/git/refs{/sha}","trees_url":"https://api.github.com/repos/mojombo/grit/git/trees{/sha}","statuses_url":"https://api.github.com/repos/mojombo/grit/statuses/{sha}","languages_url":"https://api.github.com/repos/mojombo/grit/languages","stargazers_url":"https://api.github.com/repos/mojombo/grit/stargazers","contributors_url":"https://api.github.com/repos/mojombo/grit/contributors","subscribers_url":"https://api.github.com/repos/mojombo/grit/subscribers","subscription_url":"https://api.github.com/repos/mojombo/grit/subscription","commits_url":"https://api.github.com/repos/mojombo/grit/commits{/sha}","git_commits_url":"https://api.github.com/repos/mojombo/grit/git/commits{/sha}","comments_url":"https://api.github.com/repos/mojombo/grit/comments{/number}","issue_comment_url":"https://api.github.com/repos/mojombo/grit/issues/comments{/number}","contents_url":"https://api.github.com/repos/mojombo/grit/contents/{+path}","compare_url":"https://api.github.com/repos/mojombo/grit/compare/{base}...{head}","merges_url":"https://api.github.com/repos/mojombo/grit/merges","archive_url":"https://api.github.com/repos/mojombo/grit/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/mojombo/grit/downloads","issues_url":"https://api.github.com/repos/mojombo/grit/issues{/number}","pulls_url":"https://api.github.com/repos/mojombo/grit/pulls{/number}","milestones_url":"https://api.github.com/repos/mojombo/grit/milestones{/number}","notifications_url":"https://api.github.com/repos/mojombo/grit/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/mojombo/grit/labels{/name}","releases_url":"https://api.github.com/repos/mojombo/grit/releases{/id}","deployments_url":"https://api.github.com/repos/mojombo/grit/deployments","created_at":"2007-10-29T14:37:16Z","updated_at":"2020-11-02T19:37:03Z","pushed_at":"2020-10-01T03:55:32Z","git_url":"git://github.com/mojombo/grit.git","ssh_url":"git@github.com:mojombo/grit.git","clone_url":"https://github.com/mojombo/grit.git","svn_url":"https://github.com/mojombo/grit","homepage":"http://grit.rubyforge.org/","size":7954,"stargazers_count":1901,"watchers_count":1901,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":528,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":26,"license":{"key":"mit","name":"MIT License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":528,"open_issues":26,"watchers":1901,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"temp_clone_token":"","network_count":528,"subscribers_count":64}'
+        curl_info:
+            url: 'https://api.github.com/repositories/1'
+            content_type: 'application/json; charset=utf-8'
+            http_code: 200
+            header_size: 1289
+            request_size: 144
+            filetime: -1
+            ssl_verify_result: 0
+            redirect_count: 0
+            total_time: 0.510965
+            namelookup_time: 2.1E-5
+            connect_time: 0.130083
+            pretransfer_time: 0.287784
+            size_upload: !!float 0
+            size_download: !!float 4846
+            speed_download: !!float 9501
+            speed_upload: !!float 0
+            download_content_length: !!float 4846
+            upload_content_length: !!float -1
+            starttransfer_time: 0.501163
+            redirect_time: !!float 0
+            redirect_url: ''
+            primary_ip: 140.82.112.6
+            certinfo: {  }
+            primary_port: 443
+            local_ip: 192.168.1.69
+            local_port: 35524
+            http_version: 2
+            protocol: 2
+            ssl_verifyresult: 0
+            scheme: HTTPS
