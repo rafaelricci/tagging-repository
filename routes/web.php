@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('users/getPerDay', [UserController::class, 'getPerDay'])->name('users.getPerDay');
 Route::resource('users', UserController::class)->except([
     'index'
 ]);
