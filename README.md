@@ -40,6 +40,8 @@ Execute este comando:
 !["Output"](doc/tess-outputs/output1.png) 
 !["Output"](doc/tess-outputs/output2.png) 
 
+**Observação:** Os tests que dependem da camada Services estão quebrando, porém a funcionalidade da camada Services está 100%, o motivo dos testes estarem quebrando é que o pacote php-vcr não esta conseguindo grava os VCRs de uma forma que HttpClient do Laravel entenda, busquei durante muito tempo na internet e infelizmente não encontrei solução, o mais próximo que cheguei [foi neste ponto](https://github.com/php-vcr/php-vcr/issues/309). Diante dessa situação a minha tomada de decisão foi manter os tests quebrados e procurar uma solução futuramente ao invés de remove o HttpClient do Laravel e utilizar a biblioteca CURL do PHP. Caso fique alguma dúvida a respeito da funcionalidade dos Services, basta remover a opção de gravar VCR dos metodos testados e verá que tudo passa normamelnte, porém deixar os tests sem o VCR não é uma boa prática.
+
 
 ### Dependências
 
