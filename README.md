@@ -1,61 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Tagging-Repository
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Tagging-Repository permite criar Tags e associa-las a Repositórios que vem diretamente do GitHub.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Como Installar
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Execute o `composer install` para instalar as dependências que a aplicação utiliza. Caso não possua o composer utilize estas [instruções](https://getcomposer.org/download/) para instalar.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Excutando `composer install`
 
-## Learning Laravel
+```
+  composer install    
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Gerar `token` para utilizar a API do GitHub você precisará de um token para autenticação, acesse este [link](https://developer.github.com/v3/auth/#via-oauth-and-personal-access-tokens) para receber as instruções. Com o token em mãos basta ir no ser arquivo `.env` e alterar a variavel de ambiente.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+  GIT_HUB_API_TOKEN=meu_token_gerado_no_git_hub    
+```
 
-## Laravel Sponsors
+Após instalar as dependências crie o seu banco de dados, **atualmente a App está configurada para utilizar o banco de dados MySQL**, mas caso queria alterar basta ir no seu arquivo `.env` e alterar as variaveis de ambiente de conexão com banco de dados.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Para gerar a estrutura de tabelas do seu banco de dados basta excutar o seguinte comando para que as migrations sejam executadas (para saber mais sobre migrations acesse este [link](https://laravel.com/docs/8.x/migrations).):
 
-### Premium Partners
+```
+  php artisan migrate    
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+## Como executar os testes
 
-## Contributing
+Execute este comando:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+  php artisan test    
+```
 
-## Code of Conduct
+**Outputs esperados**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+!["Output"](doc/tess-outputs/output1.png) 
+!["Output"](doc/tess-outputs/output2.png) 
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Dependências
 
-## License
+Tagging-Repository depende de:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* PHP >= 7.3
+* [Dependências do Laravel](https://laravel.com/docs/8.x)
+
+## Bibliotecas utilizadas
+
+PHP:
+
+* Laravel/ui
+* guzzlehttp/guzzle
+* lucascudo/laravel-pt-br-localization
+* felixkiss/uniquewith-validator
+* php-vcr/phpunit-testlistener-vcr
+
+JS:
+
+* chart.js 
+* choices.js
+
+Observação: todos as bibliotecas JS forão baixadas a mão e movidas para o projeto.  
+
+### Documentação
+
+[Link para descrição do projeto](https://docs.google.com/document/d/1VZGcGndH3VTJEupkM3Pt_NNeApo-qiJFWEvffTfYjS4/edit?usp=sharing)
+
+**Modelo de entidade relacional**
+
+!["Entidades relacionais"](doc/modelagem/entidades.png)
+
+**Board do Trello**
+
+Para ter acesso ao board no Trello basta entrar em contato solicitando acesso. (Imagem do board)  
+!["Board do Trello"](doc/board/trello.png)
