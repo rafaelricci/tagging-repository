@@ -13,7 +13,8 @@ class CreateTagsTable extends Migration
             $table->string('title')->nullable(false)->unique();
             $table->foreignId('user_id')
                   ->nullable(false)
-                  ->constrained();
+                  ->constrained()
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }

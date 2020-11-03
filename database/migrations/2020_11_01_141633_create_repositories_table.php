@@ -14,7 +14,10 @@ class CreateRepositoriesTable extends Migration
                   ->nullable(false)
                   ->constrained()
                   ->onDelete('cascade');
-            $table->foreignId('user_id')->nullable(false)->constrained();
+            $table->foreignId('user_id')
+                  ->nullable(false)
+                  ->constrained()
+                  ->onDelete('cascade');
             $table->primary(['tag_id', 'repository_id']);	
             $table->timestamps();
         });
