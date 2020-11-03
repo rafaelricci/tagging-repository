@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('pageTitle', 'Home')
 @section('content')
 <div class="col-md-12">
     <div class="card">

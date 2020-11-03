@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('pageTitle', 'Tags')
 @section('content')
 <div class="container bg-white py-4">
     <div class="row justify-content-center">

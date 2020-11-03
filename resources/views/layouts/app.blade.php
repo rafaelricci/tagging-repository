@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('pageTitle') | TaggingRepository</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -104,13 +104,13 @@
         </div>
     </div>
     <script src="{{ asset('js/chart.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="{{ asset('js/choice.js') }}"></script>
     <script>
         var routeUsers = "{{ route('users.getPerDay') }}";
         var routeTags = "{{ route('tags.getTags') }}";
     </script>
     <script src="{{ asset('js/chart_custom.js') }}"></script>
-    <script src="{{ asset('js/choice.js') }}"></script>
+    <script src="{{ asset('js/choice_custom.js') }}"></script>
 </body>
 
 </html>
