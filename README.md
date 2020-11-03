@@ -2,6 +2,7 @@
 
 Tagging-Repository permite criar Tags e associa-las a Repositórios que vem diretamente do GitHub.
 
+![Tagging-Repository](https://github.com/rafaelricci/tagging-repository/workflows/Tagging-Repository/badge.svg)
 
 ### Como Installar
 
