@@ -103,13 +103,13 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="{{ asset('js/chart.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script>
         var routeUsers = "{{ route('users.getPerDay') }}";
         var routeTags = "{{ route('tags.getTags') }}";
     </script>
-    <script src="{{ asset('js/chart.js') }}"></script>
+    <script src="{{ asset('js/chart_custom.js') }}"></script>
     <script src="{{ asset('js/choice.js') }}"></script>
 </body>
 
