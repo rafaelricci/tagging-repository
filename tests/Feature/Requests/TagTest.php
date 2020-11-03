@@ -11,6 +11,8 @@ use Faker\Factory;
 
 class TagTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testIndexSuccess()
     {
         $user = User::factory()->create();
