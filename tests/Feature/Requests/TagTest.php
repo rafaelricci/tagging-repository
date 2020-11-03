@@ -36,9 +36,7 @@ class TagTest extends TestCase
     public function testStoreSuccess()
     {
         $user = User::factory()->create();
-        $tag = Tag::factory()->make([
-            'user_id' => $user->id
-        ]);
+        $tag = Tag::factory()->make(['user_id' => $user->id]);
 
         $response = $this->actingAs($user)
                          ->post('tags', [
@@ -53,9 +51,7 @@ class TagTest extends TestCase
     public function testStoreFailed()
     {
         $user = User::factory()->create();
-        $tag = Tag::factory()->make([
-            'user_id' => $user->id
-        ]);
+        $tag = Tag::factory()->make(['user_id' => $user->id]);
 
         $response = $this->actingAs($user)
                          ->post('tags', [
@@ -70,9 +66,7 @@ class TagTest extends TestCase
     public function testEditSuccess()
     {
         $user = User::factory()->create();
-        $tag = Tag::factory()->create([
-            'user_id' => $user->id
-        ]);
+        $tag = Tag::factory()->create(['user_id' => $user->id]);
 
         $response = $this->actingAs($user)
                          ->get('tags/'.$tag->id.'/edit');
@@ -96,9 +90,7 @@ class TagTest extends TestCase
     public function testUpdateSuccess()
     {
         $user = User::factory()->create();
-        $tag = Tag::factory()->create([
-            'user_id' => $user->id
-        ]);
+        $tag = Tag::factory()->create(['user_id' => $user->id]);
         $faker = Factory::create();
         $newTitle = $faker->unique()->word."_".$faker->unique()->name;
         $response = $this->actingAs($user)
@@ -114,9 +106,7 @@ class TagTest extends TestCase
     public function testUpdateFailed()
     {
         $user = User::factory()->create();
-        $tag = Tag::factory()->create([
-            'user_id' => $user->id
-        ]);
+        $tag = Tag::factory()->create(['user_id' => $user->id]);
 
         $response = $this->actingAs($user)
                          ->put('tags/'.$tag->id,[
@@ -131,9 +121,7 @@ class TagTest extends TestCase
     public function testDestroySuccess()
     {
         $user = User::factory()->create();
-        $tag = Tag::factory()->create([
-            'user_id' => $user->id
-        ]);
+        $tag = Tag::factory()->create(['user_id' => $user->id]);
         $response = $this->actingAs($user)
                          ->delete('tags/'.$tag->id);
 

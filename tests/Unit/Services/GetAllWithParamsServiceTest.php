@@ -14,10 +14,10 @@ class GetAllWithParamsServiceTest extends TestCase
     public function testGet()
     {
         $params = new Request([
-            "term" => "test",
-            "language" => "ruby",
-            "order" => "desc",
-            "stars" => "on"
+            'term' => 'tetris',
+            'language' => 'assembly',
+            'order' => 'desc',
+            'stars' => 'on'
         ]);
 
         $getAllService = new GetAllWithParamsService();
