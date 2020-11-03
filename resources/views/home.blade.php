@@ -11,6 +11,5 @@
     </div>
 </div>
 
-<div class="col-md-12 mt-3" id="chartDiv">
-</div>
+<canvas id="myChart" class="col-md-12"></canvas>
 @endsection

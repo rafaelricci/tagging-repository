@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script>
         var routeUsers = "{{ route('users.getPerDay') }}";
