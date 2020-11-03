@@ -80,6 +80,11 @@
                                 Tags
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reports.index') }}">
+                                Relatórios
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
