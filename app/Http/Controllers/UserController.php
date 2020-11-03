@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class UserController extends Controller
 {
@@ -37,6 +38,15 @@ class UserController extends Controller
         $user->update($request->all());
         return redirect()->route('users.show',['user' => $user])
                          ->with('success', 'Perfil atualizad com sucesso!');;
+    }
+
+    public function getPerDay()
+    {
+        $queryResult = User::selectRaw(
+            "COUNT(*) quantity, DATE_FORMAT(created_at, '%e/%m/%Y') date"
+        )->orderBy('date', 'asc')->groupBy('date')->limit(15)->get()->toArray();
+
+        return response()->json($queryResult);
     }
 
     public function destroy(User $user)
