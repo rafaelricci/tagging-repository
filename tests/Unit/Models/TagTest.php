@@ -5,13 +5,17 @@ namespace Tests\Unit\Models;
 use App\Models\Tag;
 use Tests\TestCase;
 use Faker\Factory;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TagTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testCreateSuccess()
     {
         $tag = Tag::factory()->create();
 
+        $this->assertNotNull(Tag::find($tag->id));
         $this->assertTrue(Tag::find($tag->id) != null);
     }
 
