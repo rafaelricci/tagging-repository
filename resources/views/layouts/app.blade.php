@@ -62,26 +62,34 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2">
-                    <ul class="nav flex-column py-4 bg-white border mt-4">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('repositories.index') }}">
-                                Repositórios
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tags.index') }}">
-                                Tags
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                @auth
+                    <div class="col-md-2">
+                        <ul class="nav flex-column py-4 bg-white border mt-4">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('repositories.index') }}">
+                                    Repositórios
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('tags.index') }}">
+                                    Tags
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="col-md-10">
-                    <main class="py-4">
-                        @yield('content')
-                    </main>
-                </div>
+                    <div class="col-md-10">
+                        <main class="py-4">
+                            @yield('content')
+                        </main>
+                    </div>
+                @else
+                    <div class="col-md-12">
+                        <main class="py-4">
+                            @yield('content')
+                        </main>
+                    </div>
+                @endauth
             </div>
         </div>
     </div>
