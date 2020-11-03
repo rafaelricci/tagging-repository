@@ -64,7 +64,7 @@ class TagController extends Controller
 
         $tag->delete();
         return redirect()->route('tags.index')
-                        ->with('success', 'Tag excluida com sucesso!');
+                         ->with('success', 'Tag excluida com sucesso!');
     }
 
     public function getTags()
@@ -72,7 +72,6 @@ class TagController extends Controller
         $tags = Tag::where('user_id', Auth::id())->get();
         return response()->json($tags);
     }
-
 
     private function verifyUser($tag)
     {
