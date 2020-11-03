@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Requests;
 
+use VCR\VCR; 
 use App\Models\Repository;
 use App\Models\User;
 use App\Models\Tag;
@@ -14,8 +15,8 @@ class RepositoryTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * @vcr repository_index_test
-     */
+     * @vcr repository_index_test.yml
+    */
     public function testIndexSuccess()
     {
         $user = User::factory()->create();
@@ -27,9 +28,9 @@ class RepositoryTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /**
-     * @vcr repository_search_test
-     */
+     /**
+     * @vcr repository_search_test.yml
+    */
     public function testSearchSuccess()
     {
         $user = User::factory()->create();
@@ -54,7 +55,7 @@ class RepositoryTest extends TestCase
         $response = $this->actingAs($user)
                          ->post('repositories', [
                              'tag_id' => $tag->id,
-                             'repository_id' => random_int(1, 105929055),
+                             'repository_id' => random_int(50, 1000),
                              'user_id' => $tag->user_id
                          ]);
 
@@ -64,7 +65,7 @@ class RepositoryTest extends TestCase
 
     public function testStoreFailed()
     {
-        $repository_id = random_int(1, 105929055);
+        $repository_id = random_int(50, 1000);
         $user = User::factory()->create();
         $tag = Tag::factory()->create(['user_id' => $user->id]);
 
@@ -86,8 +87,8 @@ class RepositoryTest extends TestCase
     }
 
     /**
-     * @vcr repository_view_test
-     */
+     * @vcr repository_view_test.yml
+    */
     public function testShow()
     {
         $user = User::factory()->create();
@@ -103,7 +104,7 @@ class RepositoryTest extends TestCase
 
     public function testDestroy()
     {
-        $repository_id = random_int(1, 105929055);
+        $repository_id = random_int(50, 1000);
         $user = User::factory()->create();
         $tag = Tag::factory()->create(['user_id' => $user->id]);
 
